@@ -47,7 +47,3 @@ python app.py
 
 ## Example
 
-![Alt Text](assets/Screenshot%202024-06-16%20143006.png)
-
-
-![Alt Text](assets/Screenshot%202024-06-16%20143104.png)
