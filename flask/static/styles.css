@@ -1,0 +1,106 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(ClashDisplay-Regular.ttf);
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+ 
+
+body {
+    background-color: #121212;
+    color: white;
+    font-family: myFirstFont, sans-serif;
+   
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    /* Adjust as needed */
+    margin: 20px auto;
+    /* Center container horizontally */
+    padding: 20px;
+}
+
+.corner-text {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+    font-size: 18px;
+    font-family: monospace;
+    color: #ccc;
+}
+
+.corner-text:hover {
+    background-color: #121212;
+    color: white;
+}
+
+h1 {
+    
+    font-size: 3rem;
+    /* Adjust as needed */
+    margin-bottom: 20px;
+}
+
+
+/* Styling for the gradient text effect in the heading */
+:root {
+    --purple: #702FC4;
+    --violet: #5C00C0;
+    --pink: #ED008C;
+}
+
+h1 > .gradient {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+      to right,
+      var(--purple),
+      var(--violet),
+      var(--pink),
+      var(--purple)
+    );
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+#progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 20px;
+    background-color: #007bff;
+    width: 0%;
+    /* Initial width */
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+}
