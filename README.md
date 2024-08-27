@@ -41,7 +41,7 @@ cd flask
 
 2. Run the Flask application:
 ```bash
-python app.py
+flask run
 ```
 3. Open a web browser and go to <http://localhost:5000> to access the application.
 
