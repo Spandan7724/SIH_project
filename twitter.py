@@ -18,7 +18,6 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 class MyStreamListener(tweepy.StreamListener):
     def on_status(self, status):
-        # Check if the tweet has media
         if 'media' in status.entities:
             for media in status.entities['media']:
                 if media['type'] == 'video':
@@ -43,7 +42,7 @@ class MyStreamListener(tweepy.StreamListener):
                     result = api_response.json()
                     print(f"Tweet ID: {tweet_id}, Result: {result}")
 
-                # Clean up the downloaded video
+
                 os.remove(video_path)
             else:
                 print(f"Failed to download video from URL: {video_url}")
@@ -52,10 +51,8 @@ class MyStreamListener(tweepy.StreamListener):
 
     def on_error(self, status_code):
         if status_code == 420:
-            # Returning False in on_error disconnects the stream
             return False
 
-# Initialize and start the stream
 stream_listener = MyStreamListener()
 stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
 stream.filter(track=['video'])

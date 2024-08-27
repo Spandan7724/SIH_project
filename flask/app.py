@@ -37,7 +37,6 @@ def upload_file():
             filename = file.filename
             file_path = os.path.join('static', 'videos', filename)
 
-            # Ensure the static directory exists
             if not os.path.exists('static'):
                 os.makedirs('static')
 
